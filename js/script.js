@@ -304,7 +304,10 @@ $("#match_button").click(function () {
             let ref = db.collection("users").doc(match_info.id);
             ref.get()
                 .then(function (doc) {
-                    if (doc.data().matches.includes(user_id)) {
+                    if (
+                        doc.data().hasOwnProperty("matches") &&
+                        doc.data().matches.includes(user_id)
+                    ) {
                         //inform other person that we have matched
                         ref.set(
                             {
