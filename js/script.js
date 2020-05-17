@@ -315,6 +315,7 @@ $("#match_button").click(function () {
                             },
                             { merge: true }
                         );
+                        sessionStorage.setItem("tab", "matches");
                         alert("Its a match!");
                     }
                 })
