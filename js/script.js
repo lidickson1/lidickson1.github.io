@@ -251,6 +251,10 @@ async function get_matching() {
         }
 
         //keywords score
+        if (!match.hasOwnProperty("keywords")) {
+            console.log("doesn't even have keywords");
+            return true;
+        }
         let intersection = user_info.keywords.filter((value) =>
             match.keywords.includes(value)
         );
