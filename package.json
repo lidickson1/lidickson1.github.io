@@ -1,0 +1,19 @@
+{
+  "name": "pplcountai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mdi/font": "^5.9.55",
+    "aos": "^2.3.4",
+    "bulma": "^0.9.1",
+    "bulma-carousel": "^4.0.24",
+    "jquery": "^3.5.1",
+    "node-sass": "^5.0.0"
+  }
+}
