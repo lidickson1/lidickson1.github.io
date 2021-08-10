@@ -1,7 +1,7 @@
 let user_info;
 let match_info;
 let matches = [];
-const url = "http://hackermatch-lidickson1.herokuapp.com/";
+const url = "https://hackermatch-lidickson1.herokuapp.com/";
 // const url = "http://localhost:3000/";
 
 //this functions stringifies the json for us automatically
