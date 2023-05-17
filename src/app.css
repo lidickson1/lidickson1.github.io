@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* a {
+    @apply text-blue-500;
+} */
+
+.section {
+    @apply py-20 px-[10%] md:px-[15%];
+    /* padding: 6rem 15%; */
+}
+
+:root {
+    --sc-color-rgb-light-50p: white !important;
+}
