@@ -14,3 +14,19 @@
 :root {
     --sc-color-rgb-light-50p: white !important;
 }
+
+@keyframes jump-infinite {
+    0% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: 10px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+#scroll-indicator {
+    animation: jump-infinite 1.5s infinite;
+}

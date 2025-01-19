@@ -1,6 +1,7 @@
 <script>
     import Link from "$components/Link.svelte";
     import Button from "$components/Button.svelte";
+    import Carousel from "$components/Carousel.svelte";
 </script>
 
 <div class="section grid md:grid-cols-2 gap-10 py-20">
@@ -9,131 +10,45 @@
             <h1 class="text-5xl font-bold">Love Letter</h1>
             <p class="my-8 text-slate-700 dark:text-white">
                 A full stack multiplayer web browser game based on the card game
-                <Link
-                    text="Love Letter™"
-                    url="https://www.zmangames.com/en/games/love-letter/"
-                />. Built using <Link text="React" url="https://react.dev" />, <Link
-                    text="Bulma"
-                    url="https://bulma.io/"
+                <Link text="Love Letter™" url="https://www.zmangames.com/en/games/love-letter/" />.
+                Built using <Link text="React" url="https://react.dev" />, <Link
+                    text="NextUI"
+                    url="https://nextui.org/"
                 />, <Link text="Express" url="https://expressjs.com/" />, and <Link
                     text="Socket.IO"
                     url="https://socket.io/"
                 />. Deployed on <Link text="Vercel" url="https://vercel.com/" />
-                and <Link text="Fly.io" url="https://fly.io/" />. The game can
-                be played both on a computer and on a mobile device. It also has
-                bot support.
+                and <Link text="Fly.io" url="https://fly.io/" />. The game can be played both
+                desktop and mobile devices. It also has full bot support and custom lobbies.
             </p>
-            <Button
-                text="Play now!"
-                url="https://love-letter-resume.vercel.app/"
-            />
+            <Button text="Play now!" url="https://love-letter-resume.vercel.app/" />
         </div>
     </div>
-    <img src="images/love_letter.png" alt="Love Letter" data-aos="fade-left" />
+    <img src="/images/love_letter.png" alt="Love Letter" data-aos="fade-left" />
 </div>
 
-<!-- <div class="section bg-slate-100 dark:bg-slate-800">
-    <h1 class="text-4xl font-bold text-center mb-10" data-aos="fade-down">
-        Work Experience
-    </h1>
-    <WorkExperience
-        company="Periscope Capital"
-        title="Software Developer Intern"
-        list={[
-            "Maintained and improved the in-house software built using C# and WinForms. Implemented various features and fixed critical bugs which led to increase in productivity.",
-            "Managed and queried several SQL databases (including MySQL and Postgres) that contained 10+ years worth of data for the company.",
-            // TODO talk about Cache and ModifiedHelper
-        ]}
-    >
-        <img
-            class="dark:bg-white"
-            slot="image"
-            src="https://www.periscopecap.com/wp-content/uploads/2018/09/cropped-periscope_big_logo.png"
-            alt="Periscope Capital"
-        /></WorkExperience
-    >
-    <WorkExperience
-        company="Kidney Health Education and Research Group"
-        title="Full Stack Web Developer"
-        list={[
-            "Built Wordpress web pages with PHP, Bootstrap, and MySQL database integration",
-            "Engineered a full stack web application using Dropbox API which boosted efficiency of writing research papers by 40%",
-            "Led a 4 man team on revamping a website's UX design using Figma prototyping and CSS",
-        ]}
-    >
-        <img
-            class="dark:bg-white"
-            slot="image"
-            src="https://nefros.net/wp-content/uploads/2018/07/nefros-logo_kherg-lettering-word-and.png"
-            alt="Kidney Health Education and Research Group"
-        /></WorkExperience
-    >
-    <WorkExperience
-        company="So Golf Academy"
-        title="Marketing Assistant"
-        list={[
-            "Designed the official website using Wix, resulting in significant increase in online traffic",
-            "Implemented bilingual translation which gave access to Toronto's huge Chinese golfing customer base and led to a 50% increase in clients",
-            "Created professional posters and flyers using Inkscape, increased customer engagement by 80%",
-        ]}
-    >
-        <div class="flex justify-center" slot="image">
-            <img class="h-52" src="images/sogolf.png" alt="So Golf Academy" />
-        </div>
-    </WorkExperience>
-</div> -->
+<div class="section bg-slate-100 dark:bg-slate-800">
+    <h1 class="text-4xl font-bold text-center mb-10" data-aos="fade-down">User Interface</h1>
+    <p class="text-slate-700 dark:text-slate-300 mb-8" data-aos="fade-up">
+        The user interface has been developed to be user friendly through multiple iterations based
+        on player feedback. A tutorial is included for new players to learn how to play the game.
+        Players can create their own rooms or join other people's rooms to play. The website
+        natively supports light and dark theme, and is playable both on desktop and mobile. It can
+        even be installed as a progressive web app on mobile devices which comes with notifications
+        support.
+    </p>
+    <Carousel>
+        <img src="/images/love_letter/themes.png" alt="" />
+        <img src="/images/love_letter/mobile.png" alt="" />
+    </Carousel>
+</div>
 
-<!-- <div class="section">
-    <h1 class="text-4xl font-bold text-center mb-10" data-aos="fade-down">
-        My Projects
-    </h1>
-    <div class="grid md:grid-cols-3 gap-10">
-        <Project
-            name="Bayview Battle Royale"
-            description="A Minecraft server built with Java, Kotlin, and the Spigot API, featuring guns, a variety of gamemodes, bots, and purchasable cosmetics"
-            url="/bbr"
-            ><img
-                slot="image"
-                src="images/bbr.png"
-                alt="Bayview Battle Royale"
-            /></Project
-        >
-        <Project
-            name="Love Letter"
-            description="A full stack multiplayer web browser game based on the card game Love Letter™. Built using React, Bulma, Express, and Socket.IO. Deployed on Vercel and Fly.io"
-            ><img
-                slot="image"
-                src="images/love_letter.png"
-                alt="Love Letter"
-            /></Project
-        >
-        <Project
-            name="Alice Mazes"
-            description="A React app where users can play, edit, or have it automatically solve logic mazes invented by Robert Abbott"
-            ><img
-                slot="image"
-                src="images/alice_maze.png"
-                alt="Alice Mazes"
-            /></Project
-        >
-        <Project
-            name="Hackermatch"
-            description="A Tinder-like matching web app for hackers to easily find teammates for hackathons. Built with jQuery, Materialize, Node.js, Express, Heroku, and Firebase"
-            ><img
-                slot="image"
-                src="images/hacker_match.png"
-                alt="Hackermatch"
-            /></Project
-        >
-        <Project
-            name="Alchemy"
-            description="A desktop game app inspired by games like Little Alchemy and Doodle God with full modding/addon support. Written in Java using the Processing Library."
-            url="https://github.com/lidickson1/Alchemy2"
-            ><img
-                slot="image"
-                src="https://cdn.discordapp.com/attachments/269226485951234068/664307072564985876/screenshot.png"
-                alt="Alchemy"
-            /></Project
-        >
-    </div>
-</div> -->
+<div class="section">
+    <h1 class="text-4xl font-bold text-center mb-10" data-aos="fade-down">Bot Support</h1>
+    <p class="text-slate-700 dark:text-slate-300 mb-8" data-aos="fade-up">
+        The room's host can choose to add as many bots as they want if they want to have more
+        players. These bots will play cards like a normal player. Therefore, you can play this game
+        as singleplayer, making it a perfect app to kill time when you're bored.
+    </p>
+    <img src="/images/love_letter/bots.png" alt="" />
+</div>

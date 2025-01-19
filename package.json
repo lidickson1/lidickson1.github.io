@@ -6,23 +6,20 @@
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview",
-        "lint": "eslint .",
-        "gh-pages": "npm run build && touch build/.nojekyll && npx gh-pages -d build"
+        "lint": "eslint ."
     },
     "devDependencies": {
-        "@iconify/svelte": "^3.1.3",
-        "@sveltejs/adapter-auto": "^2.0.0",
-        "@sveltejs/adapter-static": "^2.0.2",
-        "@sveltejs/kit": "^1.5.0",
-        "autoprefixer": "^10.4.14",
-        "eslint": "^8.28.0",
-        "eslint-plugin-svelte": "^2.26.0",
-        "gh-pages": "^5.0.0",
-        "postcss": "^8.4.23",
-        "svelte": "^3.54.0",
+        "@iconify/svelte": "^4.0.2",
+        "@sveltejs/adapter-auto": "^2.1.1",
+        "@sveltejs/kit": "^1.30.4",
+        "autoprefixer": "^10.4.19",
+        "eslint": "^8.57.0",
+        "eslint-plugin-svelte": "^2.39.0",
+        "postcss": "^8.4.38",
+        "svelte": "^4.2.17",
         "svelte-carousel": "^1.0.25",
-        "tailwindcss": "^3.3.2",
-        "vite": "^4.3.0"
+        "tailwindcss": "^3.4.3",
+        "vite": "^5.1.8"
     },
     "type": "module",
     "dependencies": {
