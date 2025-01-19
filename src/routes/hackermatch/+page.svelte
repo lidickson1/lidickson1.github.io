@@ -1,5 +1,6 @@
 <script>
     import Link from "$components/Link.svelte";
+    import hacker_match from "$lib/images/hacker_match.png";
 </script>
 
 <div class="section grid md:grid-cols-3 gap-10 py-20">
@@ -22,7 +23,7 @@
             /> -->
         </div>
     </div>
-    <img src="/images/hacker_match.png" alt="Hackermatch" data-aos="fade-left" />
+    <img src={hacker_match} alt="Hackermatch" data-aos="fade-left" />
 </div>
 
 <div class="section bg-slate-100 dark:bg-slate-800">
