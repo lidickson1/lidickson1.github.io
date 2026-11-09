@@ -1,44 +1,38 @@
 <script>
-    import NavbarLink from "./NavbarLink.svelte";
     import Icon from "@iconify/svelte";
+    import NavbarLink from "./NavbarLink.svelte";
 
-    export let items; //text and link
+    let { items } = $props();
 
-    let show = false;
+    let show = $state(false);
 </script>
 
-<div
-    class="hidden md:flex bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hidden"
->
+<div class="hidden md:flex bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white hidden">
     {#each items as { text, link }}
         <NavbarLink {text} {link} />
     {/each}
 </div>
 <div class="md:hidden">
-    <div
-        class="flex bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white"
-    >
-        <div
+    <div class="flex bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white">
+        <button
             class="px-6 py-6 hover:bg-slate-200 dark:hover:bg-slate-700 cursor-pointer text-3xl"
-            on:click={() => {
+            onclick={() => {
                 show = !show;
             }}
-            aria-hidden
         >
             <Icon icon="mdi-menu" />
-        </div>
+        </button>
     </div>
     {#if show}
-        <div
+        <button
             class="flex flex-col bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-white"
-            on:click={() => {
+            onclick={() => {
                 show = false;
             }}
-            aria-hidden
         >
             {#each items as { text, link }}
                 <NavbarLink {text} {link} />
             {/each}
-        </div>
+        </button>
     {/if}
 </div>

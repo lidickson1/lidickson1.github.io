@@ -1,8 +1,7 @@
 <script>
     import Icon from "@iconify/svelte";
 
-    export let icon;
-    export let link;
+    let { icon, link } = $props();
 </script>
 
 <a

@@ -1,22 +1,20 @@
 <script>
-    export let name;
-    export let description;
-    export let url;
+    import { aosAttachment } from "svelte-aos";
+
+    let { name, description, url, image } = $props();
 </script>
 
-<div data-aos="flip-left">
+<div {@attach aosAttachment({ animation: "flip-left" })}>
     <a
         class="flex flex-col h-full justify-between rounded-lg bg-slate-100 dark:bg-gray-800 transition hover:scale-105"
         href={url}
         target={url?.startsWith("/") ? undefined : "_blank"}
         rel={url?.startsWith("/") ? undefined : "noopener noreferrer"}
     >
-        <h1
-            class="text-2xl text-center font-bold py-8 text-slate-700 dark:text-white"
-        >
+        <h1 class="text-2xl text-center font-bold py-8 text-slate-700 dark:text-white">
             {name}
         </h1>
-        <slot name="image" />
+        {@render image()}
 
         <div class="px-6 py-8">
             <!-- <div class="flex mb-4">

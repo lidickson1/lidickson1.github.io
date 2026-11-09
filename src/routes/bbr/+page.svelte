@@ -1,20 +1,25 @@
 <script>
-    import Link from "$components/Link.svelte";
-    import { browser } from "$app/environment";
-    import Carousel from "svelte-carousel";
+    import Button from "#lib/components/Button.svelte";
+    import Carousel from "#lib/components/Carousel.svelte";
+    import Link from "#lib/components/Link.svelte";
+    import { aosAttachment } from "svelte-aos";
 
-    import bbr_square from "$lib/images/bbr_square.png";
+    import bbr from "#lib/assets/bbr/bbr.png";
+    import bbr_square from "#lib/assets/bbr/bbr_square.png";
 </script>
 
 <div class="section grid md:grid-cols-4 gap-14 py-20 bg-stone-950 text-white">
-    <div class="flex flex-col justify-center" data-aos="fade-right">
+    <div class="flex flex-col justify-center" {@attach aosAttachment({ animation: "fade-right" })}>
         <img
             style="box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);"
             src={bbr_square}
             alt="Bayview Battle Royale Logo"
         />
     </div>
-    <div class="md:col-span-2 flex flex-col justify-center" data-aos="fade-down">
+    <div
+        class="md:col-span-2 flex flex-col justify-center"
+        {@attach aosAttachment({ animation: "fade-down" })}
+    >
         <div>
             <h1 class="text-5xl text-center font-bold">Bayview Battle Royale</h1>
             <p class="mt-12 mb-6">
@@ -39,16 +44,19 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-col justify-center" data-aos="fade-left">
-        <img src="/images/bbr.png" alt="Bayview Battle Royale" />
+    <div class="flex flex-col justify-center" {@attach aosAttachment({ animation: "fade-left" })}>
+        <img src={bbr} alt="Bayview Battle Royale" />
     </div>
 </div>
 
 <div class="section bg-stone-900">
-    <h1 class="text-4xl font-bold text-center text-white mb-10" data-aos="fade-down">
+    <h1
+        class="text-4xl font-bold text-center text-white mb-10"
+        {@attach aosAttachment({ animation: "fade-down" })}
+    >
         Battle Royale
     </h1>
-    <p class="text-stone-300 mb-8" data-aos="fade-up">
+    <p class="text-stone-300 mb-8" {@attach aosAttachment({ animation: "fade-up" })}>
         Our flagship gamemode &mdash; Battle Royale, is the first to bring the mainstream game
         phenomenon of the decade to Minecraft. You drop from the plane along with 60 other players,
         gather loot and gear up while constantly keeping track of the shrinking zone. Air drops
@@ -62,23 +70,26 @@
         each gun uses a different caliber and supports different attachments, adding great depth to the
         gameplay.
     </p>
-    <div class="-mx-10 md:mx-0">
-        {#if browser}
-            <Carousel autoplay>
-                <img src="/images/bbr/battle_royale/0.png" alt="" />
-                <img src="/images/bbr/battle_royale/1.png" alt="" />
-                <img src="/images/bbr/battle_royale/2.png" alt="" />
-                <img src="/images/bbr/battle_royale/3.png" alt="" />
-                <img src="/images/bbr/battle_royale/4.png" alt="" />
-                <img src="/images/bbr/battle_royale/5.png" alt="" />
-            </Carousel>
-        {/if}
-    </div>
+    <Carousel
+        images={[
+            "bbr/battle_royale/0.png",
+            "bbr/battle_royale/1.png",
+            "bbr/battle_royale/2.png",
+            "bbr/battle_royale/3.png",
+            "bbr/battle_royale/4.png",
+            "bbr/battle_royale/5.png",
+        ]}
+    ></Carousel>
 </div>
 
 <div class="section bg-stone-950">
-    <h1 class="text-4xl font-bold text-center text-white mb-10" data-aos="fade-down">Bots</h1>
-    <p class="text-stone-300 mb-8" data-aos="fade-up">
+    <h1
+        class="text-4xl font-bold text-center text-white mb-10"
+        {@attach aosAttachment({ animation: "fade-down" })}
+    >
+        Bots
+    </h1>
+    <p class="text-stone-300 mb-8" {@attach aosAttachment({ animation: "fade-up" })}>
         I developed/invented the first ever fully autonomous Minecraft FPS bots that act like real
         players. They can acquire targets, intelligently path find to various locations and
         waypoints, and can shoot remarkably well. All of the AI code is done from scratch without
@@ -93,42 +104,34 @@
         As a result, we are able to obtain a huge increase in player engagement and longer playtime by
         300%.
     </p>
-    <div class="-mx-10 md:mx-0">
-        {#if browser}
-            <Carousel autoplay>
-                <img src="/images/bbr/bots/0.png" alt="" />
-                <img src="/images/bbr/bots/1.png" alt="" />
-                <img src="/images/bbr/bots/2.png" alt="" />
-            </Carousel>
-        {/if}
-    </div>
+    <Carousel images={["bbr/bots/0.png", "bbr/bots/1.png", "bbr/bots/2.png"]}></Carousel>
 </div>
 
 <div class="section bg-stone-900">
-    <h1 class="text-4xl font-bold text-center text-white mb-10" data-aos="fade-down">Cosmetics</h1>
+    <h1
+        class="text-4xl font-bold text-center text-white mb-10"
+        {@attach aosAttachment({ animation: "fade-down" })}
+    >
+        Cosmetics
+    </h1>
     <div class="mb-8">
-        <p class="text-stone-300 mb-6" data-aos="fade-up">
+        <p class="text-stone-300 mb-4" {@attach aosAttachment({ animation: "fade-up" })}>
             Players can choose to purchase cosmetics (with real money) to support the server. Some
             examples include gun skins, crates, wearable items, and more. A fully functional website
             (link below) was implemented that provides a modern and convenient interface for players
             to browse and buy from our store. Players can also easily equip and check out their
             cosmetics with a simple and elegant GUI.
         </p>
-        <button
-            class="bg-stone-300 text-stone-900 px-3 py-2 rounded-md"
-            data-aos="zoom-in"
-            on:click={() => window.open("https://bbrmc.craftingstore.net/", "_blank")}
-            >Check out the webstore here</button
-        >
+        <div class="flex justify-center">
+            <Button text="Check out the webstore here" url="https://bbrmc.craftingstore.net/" />
+        </div>
     </div>
-    <div class="-mx-10 md:mx-0">
-        {#if browser}
-            <Carousel autoplay>
-                <img src="/images/bbr/cosmetics/0.png" alt="" />
-                <img src="/images/bbr/cosmetics/1.png" alt="" />
-                <img src="/images/bbr/cosmetics/2.png" alt="" />
-                <img src="/images/bbr/cosmetics/3.png" alt="" />
-            </Carousel>
-        {/if}
-    </div>
+    <Carousel
+        images={[
+            "bbr/cosmetics/0.png",
+            "bbr/cosmetics/1.png",
+            "bbr/cosmetics/2.png",
+            "bbr/cosmetics/3.png",
+        ]}
+    ></Carousel>
 </div>
