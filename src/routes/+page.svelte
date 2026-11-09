@@ -12,13 +12,6 @@
     import WorkExperience from "#lib/components/WorkExperience.svelte";
     import Icon from "@iconify/svelte";
     import { aosAttachment } from "svelte-aos";
-
-    const images = import.meta.glob("/src/lib/assets/*", {
-        eager: true,
-        query: "?url",
-        import: "default",
-    });
-    console.log(images);
 </script>
 
 <div class="section">
